@@ -126,14 +126,11 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(array, i){
-  array.slice(i + 1, i + 2);
-  return array;
+function getFlavorByIndex(array, number){
+  return array[number];
 }
 
-getFlavorByIndex(removeLastFlavor(addFlavor(copy(originalFlavors))), 3);
-
-console.log('Task 5', getFlavorByIndex(removeLastFlavor(addFlavor(copy(originalFlavors)))));
+console.log('Task 5', getFlavorByIndex(originalFlavors, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -151,9 +148,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, string){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === string){
+      array.splice(i,1);
+    }
+  }
+  return array;
 }
+
+console.log('Task 6', removeFlavorByName(originalFlavors, 'Rocky Road'), originalFlavors.length);
 
 
 
