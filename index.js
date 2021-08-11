@@ -46,12 +46,13 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-  const copiedFlavors = [];
-  array.slice();
+  const copiedFlavors = array.slice();/*I learned that if you omit the first and second selector values it will include all index items-this was deliberate*/
   return copiedFlavors;
 }    
 
 copy(originalFlavors);
+
+console.log('Task 1', copy(originalFlavors));
 
 
 
