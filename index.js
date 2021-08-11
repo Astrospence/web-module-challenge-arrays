@@ -92,9 +92,14 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(array,string){
+  array.unshift(string);
+  return array;
 }
+
+addFlavor(copy(originalFlavors), 'Rainbow Sherbert');
+
+console.log('Task 3', addFlavor(copy(originalFlavors)));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
