@@ -46,11 +46,8 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-  const copiedFlavors = array.slice();/*I learned that if you omit the first and second selector values it will include all index items-this was deliberate*/
-  return copiedFlavors;
+  return [...originalFlavors];
 }    
-
-copy(originalFlavors);
 
 console.log('Task 1', copy(originalFlavors));
 
@@ -75,8 +72,6 @@ function is31Flavors(array){
   }
 }
 
-is31Flavors(originalFlavors);
-
 console.log('Task 2', is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -97,9 +92,7 @@ function addFlavor(array,string){
   return array;
 }
 
-addFlavor(copy(originalFlavors), 'Rainbow Sherbert');
-
-console.log('Task 3', addFlavor(copy(originalFlavors)));
+console.log('Task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -118,9 +111,7 @@ function removeLastFlavor(array){
   return array;
 }
 
-removeLastFlavor(addFlavor(copy(originalFlavors)));
-
-console.log('Task 4', removeLastFlavor(addFlavor(copy(originalFlavors))));
+console.log('Task 4', removeLastFlavor(originalFlavors));
 
 
 
@@ -135,9 +126,14 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, i){
+  array.slice(i + 1, i + 2);
+  return array;
 }
+
+getFlavorByIndex(removeLastFlavor(addFlavor(copy(originalFlavors))), 3);
+
+console.log('Task 5', getFlavorByIndex(removeLastFlavor(addFlavor(copy(originalFlavors)))));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
